@@ -1,0 +1,318 @@
+// Variables
+$bodyColor: rgb(30, 30, 47);
+$textColor: rgb(236, 236, 236);
+$highlightColor: rgb(255, 215, 0);
+$hoverColor: rgb(255, 69, 0);
+
+// Mixins
+@mixin transition($property, $time) {
+  transition: $property $time;
+}
+
+@mixin box-shadow($x, $y, $blur, $spread, $color) {
+  box-shadow: $x $y $blur $spread $color;
+}
+
+// Base Styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  background-color: $bodyColor;
+  color: $textColor;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+a {
+  color: $highlightColor;
+  text-decoration: none;
+  @include transition(color, 0.3s);
+
+  &:hover {
+    color: $hoverColor;
+  }
+}
+
+// Header
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(135deg, #0D0D0D, #333399);
+  padding: 20px;
+  color: $highlightColor;
+}
+
+.logo {
+  height: 60px;
+  @include transition(transform, 0.3s);
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+header h1 {
+  font-size: 2rem;
+  font-family: 'BebasNeue-Regular';
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+nav a {
+  color: $highlightColor;
+  font-size: 1.1rem;
+  font-family: 'Typo-Grotesk-Thin-Demo';
+  @include transition(color, 0.3s);
+
+  &:hover {
+    color: $hoverColor;
+    border-bottom: 2px solid $hoverColor;
+  }
+}
+
+// Main Content
+main {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+.content {
+  display: flex;
+  gap: 30px;
+}
+
+.articles {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+article {
+  background-color: rgb(45, 45, 68);
+  padding: 20px;
+  border-radius: 8px;
+  @include box-shadow(0, 4px, 10px, 0, rgba(0, 0, 0, 0.5));
+  @include transition(transform 0.3s, box-shadow 0.3s);
+  font-family: Roboto-Thin;
+
+  &:hover {
+    transform: translateY(-5px);
+    @include box-shadow(0, 6px, 15px, 0, rgba(0, 0, 0, 0.7));
+  }
+
+  h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: $highlightColor;
+  }
+
+  p {
+    color: $textColor;
+    font-weight: bold;
+  }
+
+  i {
+    font-size: 24px;
+    color: $highlightColor;
+    float: right;
+  }
+}
+
+// Image Section
+.image-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  @include box-shadow(0, 4px, 15px, 0, rgba(0, 0, 0, 0.6));
+  @include transition(transform, 0.5s);
+
+  &:hover {
+    transform: scale(1.05) rotate(3deg);
+  }
+}
+
+// Footer
+.creative{
+  height:22px;
+  margin-left:3px;
+  vertical-align:text-bottom;
+}
+footer {
+  background-color: rgb(26, 26, 46);
+  color: $textColor;
+  text-align: center;
+  padding: 30px 20px;
+  font-size: 0.9rem;
+  font-family: Roboto-Thin;
+  margin-top: auto;
+
+  form {
+    margin-bottom: 20px;
+  }
+
+  input[type="email"] {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 250px;
+    margin-right: 10px;
+    @include transition(box-shadow, 0.3s);
+
+    &:focus {
+      @include box-shadow(0, 0, 10px, 0, $highlightColor);
+    }
+  }
+
+  button {
+    padding: 10px 20px;
+    border: none;
+    background-color: $hoverColor;
+    color: $textColor;
+    border-radius: 5px;
+    cursor: pointer;
+    @include transition(background-color, 0.3s);
+
+    &:hover {
+      background-color: $highlightColor;
+      color: #333;
+    }
+  }
+
+  a {
+    color: $highlightColor;
+    text-decoration: none;
+
+    &:hover {
+      color: $hoverColor;
+    }
+  }
+}
+
+/* Dispositivos móviles (hasta 768px) */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .content {
+        flex-direction: column;
+    }
+
+    .image {
+        max-width: 90%;
+    }
+    .image-section {
+        margin-top: 20px;
+    }
+
+    footer input[type="email"] {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    article h3 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Tablets (hasta 992px) */
+@media (max-width: 992px) {
+    main {
+        max-width: 90%;
+    }
+
+    .content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .articles {
+        flex: 1;
+        max-width: 90%;
+    }
+}
+
+/* PCs medianos (hasta 1200px) */
+@media (max-width: 1200px) {
+    main {
+        max-width: 95%;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    nav ul {
+        gap: 15px;
+    }
+
+    article h3 {
+        font-size: 1.6rem;
+    }
+
+    .image {
+        max-width: 80%;
+    }
+}
+
+/* Dispositivos grandes (más de 1200px) */
+@media (min-width: 1200px) {
+    main {
+        max-width: 1300px;
+    }
+
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    nav ul {
+        gap: 30px;
+    }
+
+    .image {
+        max-width: 90%;
+    }
+}
+
+@font-face {
+    font-family: BebasNeue-Regular;
+    src: url(../fonts/BebasNeue-Regular.otf);
+}
+@font-face {
+    font-family: Roboto-Thin;
+    src: url(../fonts/Roboto-Thin.ttf);
+}
+@font-face {
+    font-family: Typo-Grotesk-Thin-Demo;
+    src: url(../fonts/Typo-Grotesk-Thin-Demo.otf);
+}
