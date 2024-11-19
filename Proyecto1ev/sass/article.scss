@@ -1,0 +1,265 @@
+// Variables
+$bodyColor: #1E1E2F;
+$textColor: #ECECEC;
+$highlightColor: #FFD700;
+$hoverColor: #FF4500;
+$cardBackgroundColor: #2D2D44;
+$footerBackgroundColor: #1A1A2E;
+
+// Mixins
+@mixin transition($property, $duration) {
+  transition: $property $duration;
+}
+
+// Estilos base
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  background-color: $bodyColor;
+  color: $textColor;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+a {
+  color: $highlightColor;
+  text-decoration: none;
+  @include transition(color, 0.3s);
+
+  &:hover {
+    color: $hoverColor;
+  }
+}
+
+// Header
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(135deg, #0D0D0D, #333399);
+  padding: 20px;
+  color: $highlightColor;
+}
+
+.logo {
+  height: 60px;
+  @include transition(transform, 0.3s);
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+header h1 {
+  font-size: 2rem;
+  font-family: 'BebasNeue-Regular';
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+nav a {
+  color: $highlightColor;
+  font-size: 1.1rem;
+  font-family: 'Typo-Grotesk-Thin-Demo';
+  @include transition(color, 0.3s);
+
+  &:hover {
+    color: $hoverColor;
+    border-bottom: 2px solid $hoverColor;
+  }
+}
+
+// Main content
+main {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+.articles {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+article {
+  background-color: $cardBackgroundColor;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  @include transition(transform 0.3s, box-shadow 0.3s);
+  font-family: Roboto-Thin;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7);
+  }
+
+  h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: $highlightColor;
+  }
+
+  p {
+    color: white;
+    font-weight: bold;
+  }
+
+  i {
+    font-size: 24px;
+    color: $highlightColor;
+    float: right;
+  }
+}
+
+// Footer
+.creative{
+  height:22px;
+  margin-left:3px;
+  vertical-align:text-bottom;
+}
+footer {
+  background-color: $footerBackgroundColor;
+  color: $textColor;
+  text-align: center;
+  padding: 30px 20px;
+  font-size: 0.9rem;
+  font-family: Roboto-Thin;
+  margin-top: auto;
+
+  form {
+    margin-bottom: 20px;
+  }
+
+  input[type="email"] {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 250px;
+    margin-right: 10px;
+    @include transition(box-shadow, 0.3s);
+
+    &:focus {
+      box-shadow: 0 0 10px $highlightColor;
+    }
+  }
+
+  button {
+    padding: 10px 20px;
+    border: none;
+    background-color: $hoverColor;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    @include transition(background-color, 0.3s);
+
+    &:hover {
+      background-color: $highlightColor;
+      color: #333;
+    }
+  }
+
+  a {
+    color: $highlightColor;
+    text-decoration: none;
+
+    &:hover {
+      color: $hoverColor;
+    }
+  }
+}
+
+// Responsive design
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  footer input[type="email"] {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  article h3 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 992px) {
+  main {
+    max-width: 90%;
+  }
+
+  .articles {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 1200px) {
+  main {
+    max-width: 95%;
+  }
+
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  nav ul {
+    gap: 15px;
+  }
+
+  article h3 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  main {
+    max-width: 1300px;
+  }
+
+  header h1 {
+    font-size: 2.5rem;
+  }
+
+  nav ul {
+    gap: 30px;
+  }
+}
+
+// Font Faces
+@font-face {
+  font-family: 'BebasNeue-Regular';
+  src: url('../fonts/BebasNeue-Regular.otf');
+}
+
+@font-face {
+  font-family: 'Roboto-Thin';
+  src: url('../fonts/Roboto-Thin.ttf');
+}
+
+@font-face {
+  font-family: 'Typo-Grotesk-Thin-Demo';
+  src: url('../fonts/Typo-Grotesk-Thin-Demo.otf');
+}
