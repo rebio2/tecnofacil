@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript para Principiantes</title>
+    <link rel="icon" type="image/x-icon" href="../img/logo.ico">
+    <link rel="stylesheet" href="../css/javascript.css">
+</head>
+
+<body>
+    <header>
+        <img src="../img/logo.png" alt="Logo del Blog" class="logo">
+        <h1>TecnoFácil</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="../html/article.html">Artículos</a></li>
+                <li><a href="../html/contact.html">Contacto</a></li>
+                <li><a href="../html/acerca.html">Acerca de nosotros</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>JavaScript para Principiantes</h2>
+        <section class="tutorial animate-on-scroll">
+            <p>Bienvenido a este tutorial de JavaScript diseñado para aquellos que están dando sus primeros pasos en la
+                programación. JavaScript es un lenguaje fundamental para el desarrollo web que permite hacer que las
+                páginas sean interactivas y dinámicas.</p>
+
+            <article class="intro">
+                <h3>¿Qué es JavaScript?</h3>
+                <p>JavaScript es un lenguaje de programación de alto nivel que se ejecuta en el navegador, lo que
+                    permite realizar operaciones interactivas en el frontend. Desde validaciones de formularios hasta
+                    efectos visuales y cambios dinámicos, JavaScript ofrece un mundo de posibilidades.</p>
+            </article>
+
+            <article class="setup">
+                <h3>1. Configuración del Entorno</h3>
+                <p>Para comenzar a programar en JavaScript, no necesitas un entorno complejo. Basta con un editor de
+                    texto y un navegador. Te recomendamos usar <strong>Visual Studio Code</strong> o <strong>Sublime
+                        Text</strong> para editar código.</p>
+                <p>Además, asegúrate de tener un navegador moderno como <strong>Google Chrome</strong> o <strong>Mozilla
+                        Firefox</strong>, donde podrás ejecutar el código directamente.</p>
+            </article>
+
+            <article class="syntax">
+                <h3>2. Conceptos Básicos y Sintaxis</h3>
+                <p>La estructura básica de JavaScript incluye la declaración de variables, funciones y estructuras de
+                    control.</p>
+                <h4>Declaración de Variables</h4>
+                <p>En JavaScript, podemos declarar variables utilizando <code>var</code>, <code>let</code>, o
+                    <code>const</code>. La convención actual es usar <code>let</code> para variables que pueden cambiar
+                    y <code>const</code> para constantes.</p>
+                <pre><code>let nombre = "Juan"; // Variable que puede cambiar
+    const PI = 3.1416; // Constante</code></pre>
+
+                <h4>Funciones</h4>
+                <p>Las funciones en JavaScript son bloques de código que se pueden reutilizar. Puedes definir una
+                    función y luego llamarla en diferentes partes del código.</p>
+                <pre><code>function saludar() {
+        console.log("¡Hola, bienvenido a JavaScript!");
+    }
+    saludar(); // Llama a la función</code></pre>
+            </article>
+
+            <article class="control-structures">
+                <h3>3. Estructuras de Control</h3>
+                <p>Las estructuras de control nos permiten realizar diferentes acciones según las condiciones del
+                    programa. Las más comunes son <strong>if</strong>, <strong>for</strong> y <strong>while</strong>.
+                </p>
+                <h4>Ejemplo de <code>if</code></h4>
+                <pre><code>let edad = 18;
+    if (edad >= 18) {
+        console.log("Eres mayor de edad");
+    } else {
+        console.log("Eres menor de edad");
+    }</code></pre>
+
+                <h4>Ejemplo de <code>for</code></h4>
+                <pre><code>for (let i = 0; i < 5; i++) {
+        console.log("Número: " + i);
+    }</code></pre>
+            </article>
+
+            <article class="dom">
+                <h3>4. Manipulación del DOM</h3>
+                <p>El DOM (Document Object Model) es una representación de la estructura de tu documento HTML que
+                    JavaScript puede manipular.</p>
+                <p>Por ejemplo, puedes cambiar el contenido de un elemento HTML usando
+                    <code>document.getElementById</code>.</p>
+                <pre><code>document.getElementById("miElemento").innerText = "Nuevo contenido";</code></pre>
+            </article>
+
+            <article class="next-steps">
+                <h3>5. Próximos Pasos</h3>
+                <p>¡Felicidades! Ahora conoces los conceptos básicos de JavaScript. A partir de aquí, puedes explorar
+                    temas como eventos, funciones avanzadas, y trabajar con APIs. La práctica es clave para mejorar, así
+                    que te animo a experimentar y crear proyectos.</p>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <form action="#" method="post">
+            <label for="email">Suscríbete a nuestro boletín:</label>
+            <input type="email" id="email" name="email" placeholder="Tu correo electrónico" required>
+            <button type="submit">Suscribirse</button>
+            <p class="form-message"></p>
+        </form>
+        <p>Síguenos en redes sociales:
+            <a href="#" target="_blank">Facebook</a> |
+            <a href="#" target="_blank">Twitter</a> |
+            <a href="#" target="_blank">Instagram</a>
+        </p>
+        <p>Contacto: <strong>612 258 456</strong> | Email: <a href="mailto:javiersanchez@gamil.com">javiersanchez@gmail.com</a></p>
+        <p>&copy; 2024 TecnoFácil. Todos los derechos reservados.</p>
+        <p xmlns:cc="http://creativecommons.org/ns#">Esta obra está licenciada bajo
+            <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/?ref=chooser-v1" target="_blank"
+                rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC-ND 4.0
+                <img class="creative" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt="">
+                <img class="creative" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt="">
+                <img class="creative" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt="">
+                <img class="creative" src="https://mirrors.creativecommons.org/presskit/icons/nd.svg?ref=chooser-v1" alt=""></a>
+        </p>
+    </footer>
+    <script src="../js/script.js"></script>
+</body>
+
+</html>

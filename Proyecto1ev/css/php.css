@@ -1,0 +1,206 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    background-color: #1E1E2F;
+    color: #ECECEC;
+    line-height: 1.6;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+a {
+    color: #FFD700;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #FF4500;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(135deg, #0D0D0D, #333399);
+    padding: 20px;
+    color: #FFD700;
+}
+
+header .logo {
+    height: 60px;
+    transition: transform 0.3s;
+}
+
+header .logo:hover {
+    transform: scale(1.1);
+}
+
+header h1 {
+    font-size: 2rem;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+nav a {
+    color: #FFD700;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #FF4500;
+    border-bottom: 2px solid #FF4500;
+}
+
+main {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+main h2, main h3, main h4 {
+    color: #FFD700;
+}
+
+main .title {
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #ECECEC;
+}
+
+main section p {
+    color: #ECECEC;
+    margin-bottom: 20px;
+}
+
+main pre {
+    background-color: #1A1A2E;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
+    color: #FFD700;
+}
+
+main .animate-on-scroll {
+    margin-bottom: 40px;
+}
+
+footer {
+    background-color: #1A1A2E;
+    color: #ECECEC;
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 0.9rem;
+}
+
+footer form {
+    margin-bottom: 20px;
+}
+
+footer input[type="email"] {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 250px;
+    margin-right: 10px;
+    transition: box-shadow 0.3s;
+}
+
+footer input[type="email"]:focus {
+    box-shadow: 0 0 10px #FFD700;
+}
+
+footer button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #FF4500;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+footer button:hover {
+    background-color: #FFD700;
+    color: #333;
+}
+
+footer a {
+    color: #FFD700;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #FF4500;
+}
+
+footer .creative {
+    height: 22px;
+    margin-left: 3px;
+    vertical-align: text-bottom;
+}
+
+/* Dispositivos móviles (hasta 768px) */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* Tablets (hasta 992px) */
+@media (max-width: 992px) {
+    main {
+        max-width: 90%;
+    }
+}
+
+/* PCs medianos (hasta 1200px) */
+@media (max-width: 1200px) {
+    main {
+        max-width: 95%;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    nav ul {
+        gap: 15px;
+    }
+}
+
+/* Dispositivos grandes (más de 1200px) */
+@media (min-width: 1200px) {
+    main {
+        max-width: 1300px;
+    }
+
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    nav ul {
+        gap: 30px;
+    }
+}
